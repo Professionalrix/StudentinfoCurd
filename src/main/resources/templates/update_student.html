@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student info CRUD</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+		<div class="container">
+		<div class="row">
+		<div class="col-lg-6 col-sm-6 container justify-content-center card">
+		<h1 class="text-center">Update Student</h1>
+		
+			<div class="card-body">
+			<form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="POST">
+			
+				<div class="form-group">
+					<label> Student First Name</label>
+					<input type="text" th:value="${student.firstName}"name="firstName" th:feild="*{firstName}" class="form-control" placeholder="Enter Student First Name">
+				
+				</div>
+				
+				
+				<div class="form-group">
+					<label> Student Last Name</label>
+					<input type="text" th:value="${student.lastName}" name="lastName" th:feild="*{lastName}" class="form-control" placeholder="Enter Student Last Name">
+				
+				</div>
+				
+				<div class="form-group">
+					<label> Student Dob</label>
+					<input type="text" th:value ="${student.dob}" name="dob" th:feild="*{dob}" class="form-control" placeholder="Enter Student Date of Birth">
+				
+				</div>
+				
+				<div class="form-group">
+					<label> Student Email</label>
+					<input type="text" th:value="${student.email}" name="email" th:feild="*{email}" class="form-control" placeholder="Enter Student Email">
+				
+				</div>
+				
+				<div class="form-group">
+					<label> Student Location</label>
+					<input type="text" th:value="${student.location}" name="location" th:feild="*{location}" class="form-control" placeholder="Enter Student Location">
+				
+				</div>
+				
+				<div class="form-group">
+					<label> Student Phone NO.</label>
+					<input type="text" name="phoneNo" th:feild="*{phoneNo}" class="form-control" placeholder="Enter Student Phone Number">
+				
+				</div>
+				
+				<div class="box-footer">
+				<button type ="submit" class="btn">Submit</button>
+				
+				</div>								
+			
+			
+			</form>
+			
+			
+			</div>		
+		
+		
+		</div>
+		
+		</div>
+		
+		</div>
+
+
+</body>
+</html>
